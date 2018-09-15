@@ -4,7 +4,6 @@ import Hello from './Hello';
 import WindowWidth from './WindowWidth';
 import WindowWidth2 from './WindowWidth2';
 import withWidth from './withWidth';
-import {toClass} from 'recompose'
 import { withResizeDetector } from 'react-resize-detector';
 
 const styles = {
@@ -20,16 +19,8 @@ const aStyle = {
   }
 }
 
-// const DisplayWindowWidthText2 = React.forwardRef((props, ref) => { 
-//   return <h2 ref={ref} >DisplayWindowWidthText: window is {props.width}</h2>;
-// });
-
-// const DisplayWindowWidthText2 = React.forwardRef((props, ref) => { 
-//   return <h2 ref={ref} >DisplayWindowWidthText: window is {props.width}</h2>;
-// });
-
-const DisplayWindowWidthText = ({ width}) => {
-  return <h2>DisplayWindowtWidthText: window is {width} </h2>;
+const DisplayWindowWidthText = ({ width, text='DisplayWindowtWidthText'}) => {
+  return <h2>{text}: window is {width} </h2>;
 };
 
 const DisplayElementWidthHeightText = ({ width, height }) => {
@@ -49,6 +40,7 @@ const DisplayDevice = ({ width }) => {
 };
 
 const Element = withResizeDetector(DisplayElementWidthHeightText)
+const WindowWithWidth= withWidth(DisplayWindowWidthText)
 
 const App = () => (
   <div style={styles}>
@@ -60,6 +52,7 @@ const App = () => (
     <WindowWidth2 Width={DisplayWindowWidthText} />  
     <WindowWidth2 Width={DisplayDevice} />  
     <Element />  
+    <WindowWithWidth text="Using withWindow"/>  
   </div>
 );
 
