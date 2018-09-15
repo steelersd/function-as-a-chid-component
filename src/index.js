@@ -24,7 +24,7 @@ const DisplayWindowWidthText = ({ width, text='DisplayWindowtWidthText'}) => {
 };
 
 const DisplayElementWidthHeightText = ({ width, height }) => {
-  return <h2>DisplayWindowWidthText: window is {width} {height}</h2>;
+  return <h2>DisplayElementWidthHeightText: Element is {width} {height}</h2>;
 };
 
 const DisplayDevice = ({ width }) => {
